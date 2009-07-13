@@ -1,0 +1,10 @@
+About:
+
+eflickr_gui and the included (but separable) eflickr library are used to interact with flickr in order to upload photos remotely.
+
+Both eflickr_gui and eflickr are apps that combine to make the elfickr release.
+
+Building:
+
+$ sinan shell
+1> eflickr_gui:go().
