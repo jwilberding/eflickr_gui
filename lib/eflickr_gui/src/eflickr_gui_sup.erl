@@ -58,8 +58,8 @@ init([]) ->
     Shutdown = 2000,
     Type = worker,
 
-    AChild = {'AName', {'AModule', start_link, []},
-              Restart, Shutdown, Type, ['AModule']},
+    AChild = {eflickr_gui, {eflickr_gui, start_link, []},
+              Restart, Shutdown, Type, [eflickr_gui]},
 
     {ok, {SupFlags, [AChild]}}.
 
