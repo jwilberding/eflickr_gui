@@ -9,7 +9,8 @@ PREFIX=$(dirname $PROG_DIR)
 REL_NAME=eflickr_gui
 REL_VSN=0.1.0.0
 ERTS_VSN=5.7.1
-INVOCATION_SUFFIX="$@"
+#INVOCATION_SUFFIX="$@"
+INVOCATION_SUFFIX="-s eflickr_gui cmdln_apply eflickr_gui $@ -noshell -prefix $PREFIX"
 ###########################################
 
 

@@ -11,6 +11,9 @@
 %% API
 -export([start_link/0, test1/0, test2/1]).
 
+%% Command line processing
+-export([cmdln_apply/1]).
+
 %% gen_server callbacks
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
          terminate/2, code_change/3]).
@@ -111,3 +114,22 @@ code_change(_OldVsn, State, _Extra) ->
 %%--------------------------------------------------------------------
 %%% Internal functions
 %%--------------------------------------------------------------------
+
+
+%%====================================================================
+%% External functions
+%%====================================================================
+
+%%--------------------------------------------------------------------
+%% @doc apply functions from the commandline. 
+%% @spec (MFA) -> void()
+%% @end
+%%--------------------------------------------------------------------
+cmdln_apply([_Mod]) ->
+    io:format("PRINT HELP!!~n"),
+    %%faxien:help(),
+    init:stop(0);
+cmdln_apply([Mod, RawFunc|Args]) ->
+    %%{ok, Vsn} = version(),
+    ?INFO_MSG("erlang_gui running mod:func ~p:~p with raw args from commandline: ~w~n", [Mod, RawFunc, Args]).
+    

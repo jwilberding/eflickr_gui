@@ -7,6 +7,6 @@
               eflickr_gui_sup,
               eflickr_gui]},
    {registered,[eflickr_gui_sup]},
-   {applications, [kernel, stdlib]},
+   {applications, [kernel, stdlib, wx]},
    {mod, {eflickr_gui_app,[]}},
    {start_phases, []}]}.
